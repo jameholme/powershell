@@ -1,8 +1,8 @@
+#gets computesr from aduc and gathers their os information
 #
-#will collect the first 150 computers from active directory and gathers their operating system information (computer name, OS type, and 32bit or 64bit)
 #
 
 $ad_path = "OU=,OU=,OU=,DC=,DC=,DC=,DC="
-$computer_list = get-adcomputer -filter * -searchbase $path | select -First 150
+$computer_list = get-adcomputer -filter * -searchbase $path #uncomment this if you only want somany#|select -first 150
 $save_path = "C:\Path\Path\file.csv"
 $computer_list.name | %{ Invoke-Command -computername $_ -scriptblock {get-wmiobject win32_operatingsystem | select PSComputername, Name, OSarchitecture} | Export-Csv $save_path -Append -NoClobber -NoTypeInformation}
