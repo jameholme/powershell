@@ -1,0 +1,5 @@
+#finds files
+#main cmdlt -looks_in_subfolders \\computername_servername\foldername\ -looks_for_files_that_include *this_word*
+#           
+
+get-childitem -recurse \\COMPUTER_or_SERVER_NAME\FOLDER_NAME\ -include *File_Name_You_Are_Looking_For* 
