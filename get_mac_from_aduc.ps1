@@ -3,7 +3,7 @@
 #
 
 $path = "OU=,OU=,OU=,DC=,DC=,DC=,DC="
-$computer_list = get-adcomputer -filter * -searchbase $path #uncomment this if you only want so many#|select -first 150
+$computer_list = get-adcomputer -filter * -searchbase $path #uncomment if you only want so many---> #|select -first 150
 $save_path = "C:\Path\File.csv
 
 $computer_list.name | %{
