@@ -1,6 +1,4 @@
 #gets group members displayname/email and exports to csv file
-#
-#
 
 $group =  #change your group name 'group name'
 $path = #change your save path 'C:\Path\File.csv'
